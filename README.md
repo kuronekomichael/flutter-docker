@@ -2,7 +2,15 @@
 
 Dockerfile for Flutter App Development
 
+```
+docker pull kuronekomichael/flutter:jenkins-slave
+```
+
 ## Run flutter test
+
+```bash
+docker run -it kuronekomichael/flutter:jenkins-slave bash
+```
 
 ```bash
 git clone https://github.com/kuronekomichael/github-grass.git
@@ -42,6 +50,10 @@ Shell: /usr/local/flutter/bin/cache/artifacts/engine/linux-x64/flutter_tester: e
 ```
 
 ## Run static code analyzer
+
+```bash
+docker run -it kuronekomichael/flutter:jenkins-slave bash
+```
 
 ```bash
 git clone https://github.com/kuronekomichael/github-grass.git
