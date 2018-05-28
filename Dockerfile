@@ -13,7 +13,15 @@ RUN echo 'deb http://us.archive.ubuntu.com/ubuntu precise main multiverse' >> /e
     && apt-get clean \
     # Install Flutter
     && git clone https://github.com/flutter/flutter.git /usr/local/flutter \
-    && chown -R jenkins:jenkins /usr/local/flutter
+    && chown -R jenkins:jenkins /usr/local/flutter \
+    # Install reviewdog
+    && curl -fSL https://github.com/haya14busa/reviewdog/releases/download/0.9.8/reviewdog_linux_amd64 -o /usr/local/bin/reviewdog \
+    && chmod +x /usr/local/bin/reviewdog \
+    && chown jenkins:jenkins /usr/local/bin/reviewdog \
+    # Install dartcop (dartanalyzer wrapper)
+    && curl -fSL https://github.com/kuronekomichael/dartcop/raw/master/src/dartcop/dartcop.py -o /usr/local/bin/dartcop \
+    && chmod +x /usr/local/bin/dartcop \
+    && chown jenkins:jenkins /usr/local/bin/dartcop
 
 # Setup Flutter
 USER jenkins
