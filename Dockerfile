@@ -12,7 +12,7 @@ RUN echo 'deb http://us.archive.ubuntu.com/ubuntu precise main multiverse' >> /e
     && apt-get install -y --force-yes git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3 \
     && apt-get clean \
     # Install Flutter
-    && git clone https://github.com/flutter/flutter.git /usr/local/flutter \
+    && git clone -b beta https://github.com/flutter/flutter.git /usr/local/flutter \
     && chown -R jenkins:jenkins /usr/local/flutter \
     # Install reviewdog
     && curl -fSL https://github.com/haya14busa/reviewdog/releases/download/0.9.11/reviewdog_linux_amd64 -o /usr/local/bin/reviewdog \
